@@ -123,6 +123,6 @@ backtrace_capture(struct backtrace *bt)
     }
     bt->n_frames = n;
 #else
-    bt->n_frames = backtrace(bt->frames, BACKTRACE_MAX_FRAMES);
+    bt->n_frames = backtrace((void **)bt->frames, BACKTRACE_MAX_FRAMES);
 #endif
 }

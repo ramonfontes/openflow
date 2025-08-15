@@ -43,6 +43,7 @@
 #include <string.h>
 #include <sys/resource.h>
 #include <sys/un.h>
+#include <sys/stat.h>
 #include <unistd.h>
 #include "fatal-signal.h"
 #include "util.h"

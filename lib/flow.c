@@ -210,7 +210,7 @@ flow_extract(struct ofpbuf *packet, uint16_t in_port, struct flow *flow)
                 }
             }
         } else if (flow->dl_type == htons(ETH_TYPE_ARP)) {
-            const struct arp_eth_header *arp = pull_arp(&b);
+            const struct arp_eth_header *arp = (const struct arp_eth_header *) pull_arp(&b);
             if (arp) {
                 if (arp->ar_pro == htons(ARP_PRO_IP) && arp->ar_pln == IP_ADDR_LEN) {
                     flow->nw_src = arp->ar_spa;
